@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  margin: unset;
+  list-style: none;
+}
+
+.card {
+  margin: 10px;
+
+}
+
+#pokedex {
+  z-index: -1;
+  position: relative;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  min-height: 50vh;
+  background-color: #fc6c6d;
+  color: white;
+}
+
+#pokedex h1 {
+  padding: 15px;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 300px;
+}
+
+.pokemonInfo {
+  margin-top: -50px;
+  min-height: 50vh;
+  border-radius: 55px;
+  background-color: rgb(255, 255, 255);
+}
+
+.elementBox {
+  background-color: #f78c8e;
+  width: 70px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 40px;
+  margin-left: 20px;
+}
+
+.skill-bar {
+  width: 200px;
+  height: 5px;
+  background-color: red;
+}
