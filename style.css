@@ -7,7 +7,7 @@
 
 .card {
   margin: 10px;
-
+  max-width: 400px;
 }
 
 #pokedex {
@@ -45,6 +45,14 @@ img {
   text-align: center;
   border-radius: 40px;
   margin-left: 20px;
+}
+
+#stat-list {
+  padding-top: 30px;
+}
+
+#stat-list li {
+  padding-top: 20px;
 }
 
 .skill-bar {

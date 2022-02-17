@@ -13,19 +13,24 @@ function renderCards() {
   let pokedex = document.getElementById('pokedex');
   let pokeInfo = document.getElementById('pokemonInfo');
 
+
   pokedex.innerHTML = `
       <h1>${currentPokemon['name']}</h1>
       <div class="elementBox">${currentPokemon['types'][0]['type']['name']}</div>
       <img src="${currentPokemon['sprites']['other']['home']['front_default']}">
       `
-
+  pokeInfo.innerHTML = '<ul id="stat-list"></ul>';
   for (let i = 0; i <= 5; i++) {
-    pokeInfo.innerHTML += `
-        <li>${currentPokemon['stats'][i]['stat']['name']}: ${currentPokemon['stats'][i]['base_stat']} <span class="skill-bar"></li>
+    document.getElementById('stat-list').innerHTML += `
+        <li>${currentPokemon['stats'][i]['stat']['name']}: <b>${currentPokemon['stats'][i]['base_stat']}</b> <div class="skill-bar" id="skill-bar" style="width: ${currentPokemon['stats'][i]['base_stat']}%"></div></li>
         `
   }
+  skillColors();
 }
 
-function skillBar() {
-
+function skillColors(i) {
+  let skill = currentPokemon['stats'][i]['base_stat'];
+  if (skill > 50) {
+    dokument.getElementById('skill-bar').style = 'background-color: green;'
+  }
 }
