@@ -5,9 +5,25 @@
   list-style: none;
 }
 
+body {
+  display: flex;
+  justify-content: space-between;
+}
+
 .card {
+  border-radius: 30px;
   margin: 10px;
-  max-width: 400px;
+  min-width: 350px;
+  box-shadow: 0 0 10px;
+}
+
+.cardBox {
+  border-radius: 30px;
+  margin: 10px;
+  min-height: 50vh;
+  min-width: 400px;
+  box-shadow: 0 0 10px;
+  background-color: #f78c8e;
 }
 
 #pokedex {
@@ -59,4 +75,12 @@ img {
   width: 200px;
   height: 5px;
   background-color: red;
+}
+
+.pokemonCards {
+  margin: 20px;
+  max-width: 200px;
+  height: 100px;
+  background-color: aqua;
+  border-radius: 10px;
 }
