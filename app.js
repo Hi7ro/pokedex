@@ -1,24 +1,25 @@
 'use strict'
 
 let currentPokemon;
-let pokemonCollections = ['bulbasaur', 'ivysaur', 'venusaur', 'charmander', 'charmeleon', 'charizard', 'squirtle', 'wartortle', 'blastoise', 'pikachu'];
-let pokemonJson = [];
+let pokemonCollection = ['bulbasaur', 'ivysaur', 'venusaur', 'charmander', 'charmeleon', 'charizard', 'squirtle', 'wartortle', 'blastoise', 'pikachu'];
+let pokemonAsJson = [];
+
+
 
 async function loadPokemon() {
-  for (let i = 0; i < pokemonCollections.length; i++) {
-    const collection = pokemonCollections[i];
-    let url = `https://pokeapi.co/api/v2/pokemon/squirtle`
+  for (let i = 0; i < pokemonCollection.length; i++) {
+    let collectible = pokemonCollection[i];
+    let url = `https://pokeapi.co/api/v2/pokemon/${collectible}`
     let response = await fetch(url);
     currentPokemon = await response.json();
-    pokemonJson.push(currentPokemon);
+    pokemonAsJson.push(currentPokemon);
     console.log(currentPokemon);
   }
-
-  renderCards();
+  renderCard();
   renderPokedex();
 }
 
-function renderCards() {
+function renderCard() {
   let pokedex = document.getElementById('pokedex');
   let pokeInfo = document.getElementById('pokemonInfo');
 
@@ -33,29 +34,39 @@ function renderCards() {
     document.getElementById('stat-list').innerHTML += `
         <li>${currentPokemon['stats'][i]['stat']['name']}: <b>${currentPokemon['stats'][i]['base_stat']}</b> <div class="skill-bar" id="skill-bar" style="width: ${currentPokemon['stats'][i]['base_stat']}%"></div></li>
         `;
-    skillChangeColor();
   }
 
 }
 
-function renderPokedex(i) {
+function renderPokedex() {
   let pokedex = document.getElementById('pokedexBox');
+  for (let i = 0; i < pokemonCollection.length; i++) {
 
-  pokedex.innerHTML = `
-  <div class="pokemonCards"></div>
-  `;
-}
+    pokedex.innerHTML += `
+    <div class="pokemonCards" onclick="showPokemon()">
+      <div>
+        <h2>${pokemonAsJson[i]['name']}</h2>
+        <div class="elementBox">${pokemonAsJson[i]['types'][0]['type']['name']}</div>
+        <img src="${pokemonAsJson[i]['sprites']['other']['home']['front_default']}">
+      </div>
+    </div>
+    `;
 
-function skillChangeColor() {
-  //TODO Not working!!
-  for (let i = 0; i <= 5; i++) {
-    if (currentPokemon['stats'][i]['base_stat'] < 50) {
-      document.getElementById('skill-bar').style = 'background-color: black;'
-    }
-    if (currentPokemon['stats'][i]['base_stat'] > 50) {
-      document.getElementById('skill-bar').style = 'background-color: green;'
-    }
   }
 
+}
+
+function showPokemon(i) {
 
 }
+
+// function skinColors() {
+//   //TODO Not Working!
+//   let stats = currentPokemon['stats'][i]['base_stat']
+//   if (stats < 50) {
+//     document.getElementById('skill-bar').style.backgroundColor = 'black'
+//   }
+//   if (stats > 50) {
+//     document.getElementById('skill-bar').style.backgroundColor = 'green'
+//   }
+// }

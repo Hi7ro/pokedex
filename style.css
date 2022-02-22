@@ -7,23 +7,25 @@
 
 body {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+
 }
 
 .card {
   border-radius: 30px;
   margin: 10px;
-  min-width: 350px;
+  width: 400px;
   box-shadow: 0 0 10px;
 }
 
 .cardBox {
+  display: flex;
+  flex-wrap: wrap;
   border-radius: 30px;
   margin: 10px;
   min-height: 50vh;
-  min-width: 400px;
+  width: 400px;
   box-shadow: 0 0 10px;
-  background-color: #f78c8e;
 }
 
 #pokedex {
@@ -40,7 +42,7 @@ body {
   padding: 15px;
 }
 
-img {
+#pokedex img {
   position: absolute;
   top: 0;
   right: 0;
@@ -63,6 +65,10 @@ img {
   margin-left: 20px;
 }
 
+.cardBox .elementBox {
+  margin-left: 5px;
+}
+
 #stat-list {
   padding-top: 30px;
 }
@@ -77,10 +83,59 @@ img {
   background-color: red;
 }
 
+
+
 .pokemonCards {
+  position: relative;
   margin: 20px;
-  max-width: 200px;
+  width: 160px;
   height: 100px;
   background-color: aqua;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.pokemonCards div {
+  padding: 5px;
+}
+
+.pokemonCards img {
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+  height: 60px;
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #pokedexBox {
+    padding: 10px;
+    height: 30vh;
+    overflow-y: scroll;
+    width: 90%;
+  }
+
+  .pokemonCards {
+    margin: 20px auto;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  #pokedex img {
+    top: 70px;
+  }
+
+  .pokemonInfo {
+    height: 40vh;
+  }
 }
