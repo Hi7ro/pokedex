@@ -8,7 +8,6 @@
 body {
   display: flex;
   justify-content: space-around;
-
 }
 
 .card {
@@ -34,7 +33,7 @@ body {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   min-height: 50vh;
-  background-color: #fc6c6d;
+  background-color: #f3b2b2;
   color: white;
 }
 
@@ -57,7 +56,7 @@ body {
 }
 
 .elementBox {
-  background-color: #f78c8e;
+  background-color: #08080838;
   width: 70px;
   padding: 5px;
   text-align: center;
@@ -71,6 +70,7 @@ body {
 
 #stat-list {
   padding-top: 30px;
+  padding-right: 40px;
 }
 
 #stat-list li {
@@ -90,9 +90,13 @@ body {
   margin: 20px;
   width: 160px;
   height: 100px;
-  background-color: aqua;
+  color: white;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.pokemonCards:hover {
+  box-shadow: 0 0 10px rgb(80, 80, 80);
 }
 
 .pokemonCards div {
@@ -104,6 +108,47 @@ body {
   right: 5px;
   bottom: 10px;
   height: 60px;
+}
+
+
+.color-0 {
+  background-color: #4dc2a7;
+}
+
+.color-1 {
+  background-color: #4dc2a7;
+}
+
+.color-2 {
+  background-color: #4dc2a7;
+}
+
+.color-3 {
+  background-color: #fc6c6d;
+}
+
+.color-4 {
+  background-color: #fc6c6d;
+}
+
+.color-5 {
+  background-color: #fc6c6d;
+}
+
+.color-6 {
+  background-color: #76c5fe;
+}
+
+.color-7 {
+  background-color: #76c5fe;
+}
+
+.color-8 {
+  background-color: #76c5fe;
+}
+
+.color-9 {
+  background-color: #ffcf47;
 }
 
 @media only screen and (max-width: 900px) {
